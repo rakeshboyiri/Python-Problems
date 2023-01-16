@@ -1,20 +1,23 @@
 """
 Question:
-Write a program which can compute the factorial of a given numbers.
-The results should be printed in a comma-separated sequence on a single line.
+With a given integral number n, write a program to generate a dictionary that contains (i, i*i) such that is an integral number between 1 and n (both included). and then the program should print the dictionary.
 Suppose the following input is supplied to the program:
 8
 Then, the output should be:
-40320
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}
 
 Hints:
 In case of input data being supplied to the question, it should be assumed to be a console input.
-"""
-def fact(x):
-	if(x==0):
-		return 1
-	return x*fact(x-1)
+Consider use dict()
 
+"""
+
+def dictfun(x):
+    new_dict=dict()
+    for i in range(1,x+1):
+        new_dict.update({i:i*i})
+    return new_dict
+    
 n=int(input("Enter a number : "))
-result=fact(n)
-print("factorial of {} = {}".format(n,result))
+result=dictfun(n)
+print(result)
